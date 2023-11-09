@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary-color: #f2f2f2;
+  --secondary-color: white;
+  --thirt-color: black;
+}
+.dark_theme {
+  --primary-color: black;
+  --secondary-color: rgb(56, 54, 54);
+  --thirt-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
   min-height: 100vh;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+.container header {
+  height: 30vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  line-height: 50px;
+}
+.container header h1,
+p {
+  color: var(--thirt-color);
+}
+
+.container header .fa-moon {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  font-size: 25px;
+}
+.container header .fa-sun {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  font-size: 25px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.container main {
+  background-color: var(--secondary-color);
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+.container main .tabs{
+    border: 2px solid red;
+}
+.container main .tabs .tab {
+  width: 150px;
+  height: 80px;
+  background-color: black;
+  border-bottom: 0.1px solid rgb(186, 177, 177);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container main .tabs_text .text {
+  min-height: 400px;
+  border-bottom: 5px solid blue;
 }
+.container main .tabs_text .text h1 {
+  font-weight: bold;
+  padding: 20px 20px;
+  color: var(--thirt-color);
+}
+.container main .tabs_text .text p {
+  margin: 20px 0;
+  padding: 0 20px;
+  color: var(--thirt-color);
+}
+
+.active {
+  background-color: white !important;
+  color: blue !important;
+}
+
+.show {
+  display: block;
+}
+.close {
+  display: none;
+}
+
+@keyframes animat{
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 99%;
+    background-color: #f2f2f2;
+  }
+  .container header {
+    width: 100%;
+    text-align: center;
+  }
+  .container main .tabs_text .text h1 {
+    font-weight: bold;
+    padding: 20px 20px;
+  }
+  .container main .tabs_text .text p {
+    margin: 20px 0;
+    padding: 0 20px;
+    font-size: 11px;
+  }
+} 
